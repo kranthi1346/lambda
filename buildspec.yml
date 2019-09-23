@@ -1,6 +1,9 @@
 version: 0.1
 phases:
   install:
+  runtime-versions: 
+        nodejs: 10 
+  build:
     commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket bukat --output-template-file outputSamTemplate.yaml
 artifacts:
