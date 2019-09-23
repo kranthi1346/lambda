@@ -3,13 +3,13 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 8
+      nodejs: 10
   build:
     commands:
       # Use AWS SAM to package the application using AWS CloudFormation
       - aws cloudformation package --template samTemplate.yaml --s3-bucket bukat --output-template outputSamTemplate.yaml
 
-  post_build:
+  artifacts:
     type: zip 
     files:
       - samTemplate.yaml
