@@ -2,13 +2,8 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      # Install dependencies needed for running tests
-      - npm install runtime-npm-install
-  pre_build:
-    commands:
-      # Discover and run unit tests in the 'tests' directory
-      - npm test
+    runtime-versions:
+      nodejs: 8
   build:
     commands:
       # Use AWS SAM to package the application using AWS CloudFormation
