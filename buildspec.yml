@@ -6,8 +6,8 @@ phases:
   build:
     commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket babu-10 --output-template-file outputSamTemplate.yaml
-  artifacts:
+  post-build:
     type: zip
-     files:
-       - samTemplate.yaml
-       - outputSamTemplate.yaml
+    files:
+      - samTemplate.yaml
+      - outputSamTemplate.yaml
