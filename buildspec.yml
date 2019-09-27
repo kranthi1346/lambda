@@ -5,7 +5,7 @@ phases:
       python: 3.7 
   build:
     commands:
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket babu-10 --output-template-file outputSamTemplate.yaml
+      -aws cloudformation package --template-file samTemplate.yaml --s3-bucket babu-10 --output-template-file outputSamTemplate.yaml
   post_build:
     type: zip
     files:
